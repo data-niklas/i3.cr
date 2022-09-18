@@ -8,61 +8,55 @@ module I3
     module Event
       # Represents the `Message::EventType::WORKSPACE` event response.
       class Workspace
-        JSON.mapping(
-          change: String,
-          current: Tree?,
-          old: Tree?,
-        )
+        include JSON::Serializable
+        property change : String
+        property current : Tree? = nil
+        property old : Tree? = nil
       end
 
       # Represents the `Message::EventType::OUTPUT` event response.
       class Output
-        JSON.mapping(
-          change: String,
-        )
+        include JSON::Serializable
+        property change : String
       end
 
       # Represents the `Message::EventType::MODE` event response.
       class Mode
-        JSON.mapping(
-          change: String,
-          pango_markup: Bool,
-        )
+        include JSON::Serializable
+        property change : String
+        property pango_markup : Bool
       end
 
       # Represents the `Message::EventType::WINDOW` event response.
       class Window
-        JSON.mapping(
-          change: String,
-          container: Tree,
-        )
+        include JSON::Serializable
+        property change : String
+        property container : Tree
       end
 
       alias BarConfigUpdate = Bar
 
       # Represents the `Message::EventType::BINDING` event response.
       class Binding
+        include JSON::Serializable
+
         class Binding
-          JSON.mapping(
-            command: String,
-            event_state_mask: Array(String),
-            input_code: Int32,
-            symbol: String?,
-            input_type: String,
-          )
+          include JSON::Serializable
+          property command : String
+          property event_state_mask : Array(String)
+          property input_code : Int32
+          property symbol : String
+          property input_type : String
         end
 
-        JSON.mapping(
-          change: String,
-          binding: Binding,
-        )
+        property change : String
+        property binding : Binding
       end
 
       # Represents the `Message::EventType::SHUTDOWN` event response.
       class Shutdown
-        JSON.mapping(
-          change: String,
-        )
+        include JSON::Serializable
+        property change : String
       end
     end
   end

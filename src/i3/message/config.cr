@@ -6,9 +6,8 @@ module I3
     #
     # See `Connection#config`.
     class Config
-      JSON.mapping(
-        config: String,
-      )
+      include JSON::Serializable
+      property config : String
     end
   end
 end

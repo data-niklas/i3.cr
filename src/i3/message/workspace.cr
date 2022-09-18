@@ -6,15 +6,16 @@ module I3
     #
     # See `Connection#workspaces`.
     class Workspace
-      JSON.mapping(
-        num: Int32,
-        name: String,
-        visible: Bool,
-        focused: Bool,
-        urgent: Bool,
-        rect: Rect,
-        output: String,
+      def initialize(
+        @num : Int32,
+        @name : String,
+        @visible : Bool,
+        @focused : Bool,
+        @urgent : Bool,
+        @rect : Rect,
+        @output : String
       )
+      end
     end
   end
 end

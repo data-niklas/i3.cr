@@ -4,6 +4,6 @@ version: v0.4.1
 authors:
   - William Woodruff <william@tuffbizz.com>
 
-crystal: 0.24.1
+crystal: 1.5.1
 
 license: MIT with restrictions

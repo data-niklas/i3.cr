@@ -6,26 +6,25 @@ module I3
     #
     # See `Connection#tree`.
     class Tree
-      JSON.mapping(
-        id: Int32,
-        name: String?,
-        type: String,
-        border: String,
-        current_border_width: Int32,
-        layout: String,
-        orientation: String,
-        percent: Float32?,
-        rect: Rect,
-        window_rect: Rect,
-        deco_rect: Rect,
-        geometry: Rect,
-        window: Int32?,
-        urgent: Bool,
-        focused: Bool,
-        focus: Array(Int32),
-        nodes: Array(Tree),
-        floating_nodes: Array(Tree),
-      )
+      include JSON::Serializable
+      property id : UInt64
+      property name : String?
+      property type : String
+      property border : String
+      property current_border_width : Int32
+      property layout : String
+      property orientation : String
+      property percent : Float32?
+      property rect : Rect
+      property window_rect : Rect
+      property deco_rect : Rect
+      property geometry : Rect
+      property window : UInt64?
+      property urgent : Bool
+      property focused : Bool
+      property focus : Array(UInt64)
+      property nodes : Array(Tree)
+      property floating_nodes : Array(Tree)
     end
   end
 end

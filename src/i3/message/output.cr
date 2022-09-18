@@ -6,13 +6,12 @@ module I3
     #
     # See `Connection#outputs`.
     class Output
-      JSON.mapping(
-        name: String,
-        active: Bool,
-        primary: Bool,
-        current_workspace: String?,
-        rect: Rect,
-      )
+      include JSON::Serializable
+      property name : String
+      property active : Bool
+      property primary : Bool
+      property current_workspace : String?
+      property rect : Rect
     end
   end
 end

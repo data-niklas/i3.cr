@@ -6,13 +6,12 @@ module I3
   # See `Connection#version`.
   class Message
     class Version
-      JSON.mapping(
-        major: Int32,
-        minor: Int32,
-        patch: Int32,
-        human_readable: String,
-        loaded_config_file_name: String,
-      )
+      include JSON::Serializable
+      property major : Int32
+      property minor : Int32
+      property patch : Int32
+      property human_readable : String
+      property loaded_config_file_name : String
     end
   end
 end

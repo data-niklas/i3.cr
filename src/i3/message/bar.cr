@@ -6,43 +6,42 @@ module I3
     #
     # See `Connection#bar_config`.
     class Bar
+      include JSON::Serializable
+
       class Colors
-        JSON.mapping(
-          background: String?,
-          statusline: String?,
-          separator: String?,
-          focused_background: String?,
-          focused_statusline: String?,
-          focused_separator: String?,
-          focused_workspace_text: String?,
-          focused_workspace_bg: String?,
-          focused_workspace_border: String?,
-          active_workspace_text: String?,
-          active_workspace_bg: String?,
-          active_workspace_border: String?,
-          inactive_workspace_text: String?,
-          inactive_workspace_bg: String?,
-          inactive_workspace_border: String?,
-          urgent_workspace_text: String?,
-          urgent_workspace_bg: String?,
-          urgent_workspace_border: String?,
-          binding_mode_text: String?,
-          binding_mode_bg: String?,
-          binding_mode_border: String?,
-        )
+        include JSON::Serializable
+        property background : String?
+        property statusline : String?
+        property separator : String?
+        property focused_background : String?
+        property focused_statusline : String?
+        property focused_separator : String?
+        property focused_workspace_text : String?
+        property focused_workspace_bg : String?
+        property focused_workspace_border : String?
+        property active_workspace_text : String?
+        property active_workspace_bg : String?
+        property active_workspace_border : String?
+        property inactive_workspace_text : String?
+        property inactive_workspace_bg : String?
+        property inactive_workspace_border : String?
+        property urgent_workspace_text : String?
+        property urgent_workspace_bg : String?
+        property urgent_workspace_border : String?
+        property binding_mode_text : String?
+        property binding_mode_bg : String?
+        property binding_mode_border : String?
       end
 
-      JSON.mapping(
-        id: String,
-        mode: String,
-        position: String,
-        status_command: String,
-        font: String,
-        workspace_buttons: Bool,
-        binding_mode_indicator: Bool,
-        verbose: Bool,
-        colors: Colors,
-      )
+      property id : String
+      property mode : String
+      property position : String
+      property status_command : String
+      property font : String
+      property workspace_buttons : Bool
+      property binding_mode_indicator : Bool
+      property verbose : Bool
+      property colors : Colors
     end
   end
 end
