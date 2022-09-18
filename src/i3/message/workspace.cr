@@ -6,16 +6,14 @@ module I3
     #
     # See `Connection#workspaces`.
     class Workspace
-      def initialize(
-        @num : Int32,
-        @name : String,
-        @visible : Bool,
-        @focused : Bool,
-        @urgent : Bool,
-        @rect : Rect,
-        @output : String
-      )
-      end
+      include JSON::Serializable
+      property num : Int32
+      property name : String
+      property visible : Bool
+      property focused : Bool
+      property urgent : Bool
+      property rect : Rect
+      property output : String
     end
   end
 end
